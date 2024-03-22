@@ -29,4 +29,3 @@ pikepdf
 pypdf
 chromadb
 grandalf
-poppler
