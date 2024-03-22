@@ -29,3 +29,5 @@ pikepdf
 pypdf
 chromadb
 grandalf
+ipython
+poppler

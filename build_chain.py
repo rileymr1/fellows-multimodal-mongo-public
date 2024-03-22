@@ -12,7 +12,7 @@ from langchain_core.messages import HumanMessage
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import OpenAIEmbeddings
-from langchain.vectorstores import MongoDBAtlasVectorSearch
+from langchain_community.vectorstores import MongoDBAtlasVectorSearch
 from pymongo import MongoClient
 from langchain.storage import InMemoryStore
 
@@ -195,3 +195,5 @@ retriever = MultiVectorRetriever(
 
 # Create RAG chain
 chain_multimodal_rag = multi_modal_rag_chain(retriever)
+
+print(chain_multimodal_rag.invoke("Give me company names that are interesting investments based on EV / NTM and NTM rev growth. Consider EV / NTM multiples vs historical?"))
