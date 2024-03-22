@@ -29,11 +29,11 @@ VECTOR_INDEX_NAME=st.secrets["VECTOR_INDEX_NAME"]
 KEYVALUE_INDEX_NAME=st.secrets["KEYVALUE_INDEX_NAME"]
 
 
-def plt_img_base64(img_base64):
-    """Display base64 encoded string as image"""
-    # Create an HTML img tag with the base64 string as the source
-    image_html = f'<img src="data:image/jpeg;base64,{img_base64}" />'
-    display(HTML(image_html))
+# def plt_img_base64(img_base64):
+#     """Display base64 encoded string as image"""
+#     # Create an HTML img tag with the base64 string as the source
+#     image_html = f'<img src="data:image/jpeg;base64,{img_base64}" />'
+#     display(HTML(image_html))
 
 
 def looks_like_base64(sb):
