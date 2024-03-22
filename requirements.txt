@@ -28,4 +28,4 @@ pypdf
 chromadb
 grandalf
 ipython
-poppler
+pdf2image
