@@ -12,8 +12,6 @@ langchain-openai
 langchain-community
 langchain-core
 langchain-experimental
-streamlit
-streamlit-chat
 python-dotenv
 jupyterlab
 unstructured
