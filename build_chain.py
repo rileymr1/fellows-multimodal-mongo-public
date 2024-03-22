@@ -3,7 +3,7 @@ import re
 import base64
 import streamlit as st
 
-from IPython.display import HTML, display
+# from IPython.display import HTML, display
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
 from PIL import Image
 from langchain.retrievers.multi_vector import MultiVectorRetriever
