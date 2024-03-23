@@ -9,9 +9,6 @@ from build_chain import VECTOR_COLLECTION_NAME
 from build_chain import KEYVALUE_COLLECTION_NAME
 from build_chain import VECTOR_INDEX_NAME
 
-print(OPENAI_API_KEY, MONGODB_CONN_STRING, DB_NAME, VECTOR_COLLECTION_NAME, KEYVALUE_COLLECTION_NAME, VECTOR_INDEX_NAME)
-
-
 from build_chain import chain_multimodal_rag as chain
 
 

@@ -195,4 +195,10 @@ retriever = MultiVectorRetriever(
 # Create RAG chain
 chain_multimodal_rag = multi_modal_rag_chain(retriever)
 
-print(chain_multimodal_rag.invoke("What are the EV / NTM and NTM rev growth for MongoDB, Cloudflare, and Datadog?"))
+query = "What are the EV / NTM and NTM rev growth for MongoDB, Cloudflare, and Datadog?"
+
+# relevantDocs = retriever.get_relevant_documents(query, limit=6)
+# print(relevantDocs)
+
+print(chain_multimodal_rag.invoke(query))
+
