@@ -55,6 +55,8 @@ def print_relevant_images(inputText):
             st.write("See below for the relevant images used in this answer.")
             st.image(image_representation)
 
+st.title('🏥 FellowsGPT')
+
 with st.form('my_form'):
     inputText = st.text_area('Enter text:', 'What are the EV / NTM and NTM rev growth for MongoDB, Cloudflare, and Datadog?')
     submitted = st.form_submit_button('Submit')
