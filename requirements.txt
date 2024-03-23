@@ -3,3 +3,4 @@ langchain
 langchain-openai
 pymongo
 python-dotenv
+streamlit-chat
