@@ -14,6 +14,7 @@ os.environ["LANGCHAIN_API_KEY"] = st.secrets["LANGCHAIN_API_KEY"]
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"] # st.sidebar.text_input('OpenAI API Key', type='password')
 
+@st.cache_data
 def base64_to_image(base64_string):
     # Decode base64 string to binary data
     binary_data = base64.b64decode(base64_string)
@@ -42,17 +43,19 @@ def base64_to_image(base64_string):
         # Unsupported image type
         raise ValueError("Unsupported image type")
 
+@st.cache_data
 def generate_response(input_text):
     llm = chain
     st.info(llm.invoke(input_text))
 
+@st.cache_data
 def print_relevant_images(inputText):
     relevantDocs = retriever.get_relevant_documents(inputText, limit=6)
     relevantDocsSplit = split_image_text_types(relevantDocs)
     if "images" in relevantDocsSplit and isinstance(relevantDocsSplit["images"], list):
+        st.write("See below for the relevant images used in this answer.")
         for img_base64 in relevantDocsSplit["images"]:
             image_representation = base64_to_image(img_base64)
-            st.write("See below for the relevant images used in this answer.")
             st.image(image_representation)
 
 st.title('🏥 FellowsGPT')

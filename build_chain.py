@@ -119,7 +119,7 @@ def resize_base64_image(base64_string, size=(128, 128)):
     # Encode the resized image to Base64
     return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
-
+@st.cache_data
 def split_image_text_types(docs):
     """
     Split base64-encoded images and texts
@@ -137,7 +137,7 @@ def split_image_text_types(docs):
             texts.append(doc)
     return {"images": b64_images, "texts": texts}
 
-
+@st.cache_data
 def multi_modal_rag_chain(retriever):
     """
     Multi-modal RAG chain
