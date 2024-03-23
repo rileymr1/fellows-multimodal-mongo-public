@@ -137,7 +137,6 @@ def split_image_text_types(docs):
             texts.append(doc)
     return {"images": b64_images, "texts": texts}
 
-@st.cache_data
 def multi_modal_rag_chain(retriever):
     """
     Multi-modal RAG chain
