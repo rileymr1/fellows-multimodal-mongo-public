@@ -28,13 +28,6 @@ KEYVALUE_COLLECTION_NAME=st.secrets["KEYVALUE_COLLECTION_NAME"]
 VECTOR_INDEX_NAME=st.secrets["VECTOR_INDEX_NAME"]
 
 
-# def plt_img_base64(img_base64):
-#     """Display base64 encoded string as image"""
-#     # Create an HTML img tag with the base64 string as the source
-#     image_html = f'<img src="data:image/jpeg;base64,{img_base64}" />'
-#     display(HTML(image_html))
-
-
 def looks_like_base64(sb):
     """Check if the string looks like base64"""
     return re.match("^[A-Za-z0-9+/]+[=]{0,2}$", sb) is not None
