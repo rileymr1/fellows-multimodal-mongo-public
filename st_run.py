@@ -1,14 +1,5 @@
 import streamlit as st
-from getStreamlitIP import external_ip as ip
 import os
-
-# for debugging
-from build_chain import OPENAI_API_KEY
-from build_chain import MONGODB_CONN_STRING
-from build_chain import DB_NAME
-from build_chain import VECTOR_COLLECTION_NAME
-from build_chain import KEYVALUE_COLLECTION_NAME
-from build_chain import VECTOR_INDEX_NAME
 
 from build_chain import chain_multimodal_rag as chain
 from build_chain import retriever
@@ -18,7 +9,6 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = st.secrets["LANGCHAIN_API_KEY"]
 
 st.title('🏥 FellowsGPT')
-st.write(ip)
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"] # st.sidebar.text_input('OpenAI API Key', type='password')
 
