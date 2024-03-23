@@ -91,7 +91,7 @@ def img_prompt_func(data_dict):
         "text": (
             "You are a healthcare consultant tasking with providing training to newly hired early career healthcare consultant trainees called 'Fellows.' .\n"
             "You will be given a mixed of text, tables, and image(s) usually of charts or graphs.\n"
-            "Use this information to provide advice related to the user question. Print for me any images or tables used to inform your answer. \n"
+            "Use this information to provide advice related to the user question. \n"
             f"User-provided question: {data_dict['question']}\n\n"
             "Text and / or tables:\n"
             f"{formatted_texts}"
