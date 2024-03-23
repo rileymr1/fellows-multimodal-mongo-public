@@ -16,7 +16,7 @@ def get_external_ip():
 
 st.title('🏥 FellowsGPT')
 external_ip = get_external_ip()
-os.write(1,external_ip)
+st.write("External IP: ", external_ip)
 
 # from IPython.display import HTML, display
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
