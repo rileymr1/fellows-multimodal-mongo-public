@@ -8,7 +8,19 @@ from build_chain import split_image_text_types
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = st.secrets["LANGCHAIN_API_KEY"]
 
+import requests
+
+def get_external_ip():
+    response = requests.get("https://api64.ipify.org?format=json")
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("ip")
+    else:
+        return "Unknown"
+
 st.title('🏥 FellowsGPT')
+external_ip = get_external_ip()
+os.write(1,b"External IP: ", external_ip)
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"] # st.sidebar.text_input('OpenAI API Key', type='password')
 
@@ -33,5 +45,7 @@ with st.form('my_form'):
         generate_response(inputText)
         print_relevant_images(inputText)
         
+
+
 
 
