@@ -196,4 +196,4 @@ retriever = MultiVectorRetriever(
 # Create RAG chain
 chain_multimodal_rag = multi_modal_rag_chain(retriever)
 
-print(chain_multimodal_rag.invoke("Give me company names that are interesting investments based on EV / NTM and NTM rev growth. Consider EV / NTM multiples vs historical?"))
+print(chain_multimodal_rag.invoke("What are the EV / NTM and NTM rev growth for MongoDB, Cloudflare, and Datadog?"))
