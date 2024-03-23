@@ -119,7 +119,6 @@ def resize_base64_image(base64_string, size=(128, 128)):
     # Encode the resized image to Base64
     return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
-@st.cache_data
 def split_image_text_types(docs):
     """
     Split base64-encoded images and texts
@@ -201,11 +200,3 @@ retriever = MultiVectorRetriever(
 
 # Create RAG chain
 chain_multimodal_rag = multi_modal_rag_chain(retriever)
-
-query = "What are the EV / NTM and NTM rev growth for MongoDB, Cloudflare, and Datadog?"
-
-# relevantDocs = retriever.get_relevant_documents(query, limit=6)
-# print(relevantDocs)
-
-print(chain_multimodal_rag.invoke(query))
-
