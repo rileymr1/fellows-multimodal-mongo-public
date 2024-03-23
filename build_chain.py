@@ -1,7 +1,22 @@
 import io
+import os
 import re
 import base64
 import streamlit as st
+
+import requests
+
+def get_external_ip():
+    response = requests.get("https://api64.ipify.org?format=json")
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("ip")
+    else:
+        return "Unknown"
+
+st.title('🏥 FellowsGPT')
+external_ip = get_external_ip()
+os.write(1,b"External IP: ", external_ip)
 
 # from IPython.display import HTML, display
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
