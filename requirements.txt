@@ -10,7 +10,7 @@ langchain[all]
 langchain
 langchain-openai
 langchain-community
-langchain-core
+# langchain-core
 langchain-experimental
 python-dotenv
 jupyterlab
